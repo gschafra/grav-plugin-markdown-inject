@@ -1,6 +1,6 @@
 # Grav Markdown Inject Plugin
 
-`Markdonws Inject` is a  [Grav][grav] Plugin that lets you inject markdown files from an external source into other pages using simple markdown syntax
+`Markdown Inject` is a  [Grav][grav] Plugin that lets you inject markdown files from an external source into other pages using simple markdown syntax
 
 # Installation
 
