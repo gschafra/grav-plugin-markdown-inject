@@ -40,6 +40,6 @@ If you need to change any value, then the best process is to copy the [markdown-
 ```
 [plugin:markdown-inject](https://your.domain.com/path/to/file.md)
 ```
-**Important:** only https URLs and file extension .md are accepted.
+**Important:** only https URLs are allowed. Only file extension '.md' or an URL ending with 'download' (like Nextcloud links) are accepted.
 
 This approach load the content of external markdown file into the page rendered with the associated template.  This works best for modular page content or content that uses a specific template that provides appropriate styling that is intended to be part of other pages.
