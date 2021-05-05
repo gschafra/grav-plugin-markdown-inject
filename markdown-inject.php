@@ -80,7 +80,7 @@ class MarkdownInjectPlugin extends Plugin
 
                 // load file into $inject
                 // get the full URL to the markdown file from the search string
-                if (preg_match('/https:\/\/(.*)?\.md/i', $search, $url)) { 
+                if (preg_match('/https:\/\/(.*)?(\.md|download)/i', $search, $url)) { 
                     // URl found, load file with error suppressed
                     $file_content = @file_get_contents($url[0]);
                     // do the error handling
@@ -108,7 +108,7 @@ class MarkdownInjectPlugin extends Plugin
 
     protected function parseInjectLinks($content, $function)
     {
-        $regex = '/\[plugin:markdown-inject\]\(https:\/\/(.*)?\.md\)/i';
+        $regex = '/\[plugin:markdown-inject\]\(https:\/\/(.*)?(\.md|download)\)/i';
         return preg_replace_callback($regex, $function, $content);
     }
 
