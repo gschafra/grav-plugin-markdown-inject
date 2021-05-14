@@ -2,7 +2,7 @@
 /**
  * MarkdownInject
  *
- * This plugin imports markdown files from given URLs
+ * This plugin imports markdown content from given URLs/files
  *
  * Licensed under MIT, see LICENSE.
  */
@@ -79,13 +79,18 @@ class MarkdownInjectPlugin extends Plugin
                 $search = $matches[0]; // holds the string to be replaced, eg: [plugin:markdown-inject](https://domain.com/file.md)
 
                 // load file into $inject
-                // get the full URL to the markdown (.md-file or download) from the search string
-                if (preg_match('/https:\/\/(.*)?(\.md|download)/i', $search, $url)) { 
+                // get the full URL to the markdown file from the search string
+                // requirements:
+                //      * https, and
+                //      * .md file extension, or
+                //      * .php file extension, or
+                //      * download at the end (e.g. nextcloud shares)
+                if (preg_match('/https:\/\/(.*)?(\.md|download|\.php)/i', $search, $url)) { 
                     // URl found, load file with error suppressed
                     $file_content = @file_get_contents($url[0]);
                     // do the error handling
                     if ($file_content === FALSE) {
-                        $inject = "error while loading from file"; // url or file not found
+                        $inject = "Error loading content"; // url or file not found
                     }
                     // no errors, file found and read
                     else {
@@ -108,7 +113,7 @@ class MarkdownInjectPlugin extends Plugin
 
     protected function parseInjectLinks($content, $function)
     {
-        $regex = '/\[plugin:markdown-inject\]\(https:\/\/(.*)?(\.md|download)\)/i';
+        $regex = '/\[plugin:markdown-inject\]\(https:\/\/(.*)?(\.md|download|\.php)\)/i';
         return preg_replace_callback($regex, $function, $content);
     }
 
