@@ -1,6 +1,6 @@
 # Grav Markdown Inject Plugin
 
-`Markdown Inject` is a Grav Plugin that lets you inject markdown files from an external source into your page using simple markdown syntax
+`Markdown Inject` is a Grav Plugin that lets you inject markdown content from external sources into your page using simple markdown syntax
 
 # Installation
 
@@ -30,16 +30,21 @@ enabled: true
 
 If you need to change any value, then the best process is to copy the [markdown-inject.yaml](markdown-inject.yaml) file into your `users/config/plugins/` folder (create it if it doesn't exist), and then modify there.  This will override the default settings.
 
-
-### Page Config
-
-(not yet implemented)
-
 # Usage
 
+To load a .md file:
 ```
 [plugin:markdown-inject](https://your.domain.com/path/to/file.md)
 ```
-**Important:** only https URLs are allowed. Only file extension '.md' or an URL ending with 'download' (like Nextcloud links) are accepted.
+or to load from php file:
+```
+[plugin:markdown-inject](https://your.domain.com/path/to/file.php)
+```
+or to load from nextcloud share:
+```
+[plugin:markdown-inject](https://cloud.domain.de/index.php/s/SomeRandomStuff42/download
+```
 
-This approach load the content of external markdown file into the page rendered with the associated template.  This works best for modular page content or content that uses a specific template that provides appropriate styling that is intended to be part of other pages.
+**Important:** only https URLs are allowed.
+
+This approach load the content of external markdown source into the page.
