@@ -57,7 +57,7 @@ or to load from php file:
 ```
 or to load from nextcloud share:
 ```
-[plugin:markdown-inject](https://cloud.domain.de/index.php/s/SomeRandomStuff42/download
+[plugin:markdown-inject](https://cloud.domain.de/index.php/s/SomeRandomStuff42/download)
 ```
 
 **Important:** only https URLs are allowed.
