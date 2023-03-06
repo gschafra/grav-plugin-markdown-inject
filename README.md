@@ -14,6 +14,21 @@ The simplest way to install this plugin is via the [Grav Package Manager (GPM)](
 
 This will install the Markdown Inject plugin into your `/user/plugins` directory within Grav. Its files can be found under `/your/site/grav/user/plugins/markdown-inject`.
 
+## Clone GitHub repository
+
+Use your system's Terminal (also called the command line).  From the root of your Grav install type:
+
+```
+$ cd user/plugins 
+$ git clone https://github.com/cron-ix/grav-plugin-markdown-inject.git markdown-inject/
+```
+
+
+This will install the Sampple theme into your `user/themes/sampple` directory within Grav. Its files can be found under `/your/site/grav/user/themes/sampple`.
+
+To update the theme go to the themes root folder `/your/site/grav/user/themes/sampple/` and type:
+
+    git pull
 ## Manual Installation
 
 To install this plugin, just download the zip version of this repository and unzip it under `/your/site/grav/user/plugins`. Then, rename the folder to `markdown-inject`. You can find these files either on [GitHub](https://github.com/cron-ix/grav-plugin-markdown-inject) or via [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
