@@ -85,11 +85,23 @@ class MarkdownInjectPlugin extends Plugin
                 //      * .md file extension, or
                 //      * .php file extension, or
                 //      * download at the end (e.g. nextcloud shares)
-                if (preg_match('/https:\/\/(.*)?(\.md|download|\.php)/i', $search, $url)) { 
-                    // URl found, load file with error suppressed
-                    $file_content = @file_get_contents($url[0]);
+                if (preg_match('/\s*^(https:\/)*\/(.*)?(\.md|download|\.php)/i', $search, $url)) { 
+                    // If protocol is present load content from remote
+                    if ($url[0]) {
+                        // URl found, load file with error suppressed
+                        $file_content = @file_get_contents($url[0]);
+                    } else {
+                        $page_path = $matches[3] ?: $matches[2];
+                         // "/route/to/page" from user dir
+                        $user_path = $this->grav['locator']->findResource('user://');
+
+                        if (file_exists($user_path . '/' . $page_path)) {
+                            $file_content = file_get_contents($user_path . '/' . $page_path);
+                        }
+                    }
+
                     // do the error handling
-                    if ($file_content === FALSE) {
+                    if (!$file_content) {
                         $inject = "Error loading content"; // url or file not found
                     }
                     // no errors, file found and read

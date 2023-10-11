@@ -1,21 +1,21 @@
 name: Markdown Inject
 type: plugin
 slug: markdown-inject
-version: 0.1.0
+version: 0.2.0
 description: "**Markdown Inject** lets you import a markdown file fron an external source"
 icon: plug
 author:
   name: Thomas Schroeder
   email: Thomas.Schroeder@vrax.de
-homepage: https://github.com/cron-ix/grav-plugin-markdown-inject
+homepage: https://github.com/gschafra/grav-plugin-markdown-inject
 demo: http://demo.yoursite.com
 keywords: grav, plugin, etc
-bugs: https://github.com/cron-ix/grav-plugin-markdown-inject/issues
-docs: https://github.com/cron-ix/grav-plugin-markdown-inject/blob/develop/README.md
+bugs: https://github.com/gschafra/grav-plugin-markdown-inject/issues
+docs: https://github.com/gschafra/grav-plugin-markdown-inject/blob/develop/README.md
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.6.0' }
+  - { name: grav, version: '>=1.7.0' }
 
 form:
   validation: loose
