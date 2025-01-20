@@ -11,7 +11,7 @@ homepage: https://github.com/cron-ix/grav-plugin-markdown-inject
 demo: http://demo.yoursite.com
 keywords: grav, plugin, etc
 bugs: https://github.com/cron-ix/grav-plugin-markdown-inject/issues
-docs: https://github.com/cron-ix/grav-plugin-markdown-inject/blob/develop/README.md
+docs: https://github.com/cron-ix/grav-plugin-markdown-inject/tree/main#readme-ov-file
 license: MIT
 
 dependencies:
