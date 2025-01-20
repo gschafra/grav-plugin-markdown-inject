@@ -24,11 +24,12 @@ $ git clone https://github.com/cron-ix/grav-plugin-markdown-inject.git markdown-
 ```
 
 
-This will install the Sampple theme into your `user/themes/sampple` directory within Grav. Its files can be found under `/your/site/grav/user/themes/sampple`.
+This will install the Markdown Inject plugin into your `user/plugins` directory within Grav. Its files can be found under `/your/site/grav/user/plugins/markdown-inject`.
 
-To update the theme go to the themes root folder `/your/site/grav/user/themes/sampple/` and type:
+To update the plugin go to the plugins root folder `/your/site/grav/user/plugins/markdown-inject/` and type:
 
     git pull
+    
 ## Manual Installation
 
 To install this plugin, just download the zip version of this repository and unzip it under `/your/site/grav/user/plugins`. Then, rename the folder to `markdown-inject`. You can find these files either on [GitHub](https://github.com/cron-ix/grav-plugin-markdown-inject) or via [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
@@ -47,19 +48,19 @@ If you need to change any value, then the best process is to copy the [markdown-
 
 # Usage
 
-To load a .md file:
+To load an external Markdown file:
 ```
 [plugin:markdown-inject](https://your.domain.com/path/to/file.md)
 ```
-or to load from php file:
+To load the output from an external php script:
 ```
 [plugin:markdown-inject](https://your.domain.com/path/to/file.php)
 ```
-or to load from nextcloud share:
+To load the content of an external nextcloud share:
 ```
 [plugin:markdown-inject](https://cloud.domain.de/index.php/s/SomeRandomStuff42/download)
 ```
 
 **Important:** only https URLs are allowed.
 
-This approach load the content of external markdown source into the page.
+This approach load the content of external source into the page.
