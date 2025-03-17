@@ -44,9 +44,6 @@ class MarkdownInjectPlugin extends Plugin
     public function onPluginsInitialized()
     {
         if ($this->isAdmin()) {
-            $this->enable([
-                'onAdminTaskExecute' => ['onAdminTaskExecute', 0],
-            ]);
             return;
         }
 
